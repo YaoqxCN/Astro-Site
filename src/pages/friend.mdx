@@ -1,0 +1,29 @@
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseCard from "../components/BaseCard.astro";
+import Collapse from "../components/blog/collapse.astro";
+import Diff from "../components/blog/diff.astro";
+import Error from "../components/blog/error.astro";
+import Info from "../components/blog/info.astro";
+import Kbd from "../components/blog/kbd.astro";
+import Success from "../components/blog/success.astro";
+import Warning from "../components/blog/warning.astro";
+import TimeLine from "../components/page/TimeLine.astro";
+import LinkCard from "../components/page/LinkCard.astro";
+
+<BaseLayout title="Friend">
+  <BaseCard title="Friend">
+# 🔗 友情链接
+
+---
+
+    <div class="grid grid-cols-2 gap-4">
+      <LinkCard
+        title="Maoziyu"
+        desc="NFLSer"
+        url="https://mzy.black-hole.asia/"
+        img="/profile/mzy.webp"
+      />
+    </div>
+
+  </BaseCard>
+</BaseLayout>

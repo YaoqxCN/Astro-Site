@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+import Menu from "../components/ProfileCardMenu.astro";
+import Footer from "../components/ProfileCardFooter.astro";
+import { USER_AVATAR } from "../consts";
+---
+
+<div
+  class="flex-col gap-4 mb-8 w-full sticky md:sticky lg:relative card bg-base-100 shadow-xl p-4"
+>
+  <div class="avatar p-4">
+    <Image
+      class="mask mask-circle"
+      format="webp"
+      width={300}
+      height={300}
+      src={USER_AVATAR}
+      alt="Profile"
+      loading="eager"
+    />
+  </div>
+  <Menu />
+  <Footer />
+</div>

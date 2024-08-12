@@ -1,0 +1,103 @@
+---
+import dayjs from "dayjs";
+import { Image } from "astro:assets";
+import License from "../components/License.astro";
+import CommentWaline from "./CommentWaline.astro";
+import { DATE_FORMAT, infoTest } from "../consts";
+import type { CardInfo } from "../types";
+const {
+  title = "undefined",
+  image,
+  pubDate,
+  badge,
+  categories,
+  tags,
+  isBlog = false,
+  url = decodeURIComponent(Astro.url.toString()),
+} = Astro.props as CardInfo;
+const displayDate = dayjs(pubDate).format(DATE_FORMAT);
+const hasTategories = categories && categories.length > 0;
+const hasTags = tags && tags.length > 0;
+---
+<div
+  class="mb-8 relative left-1/2 transform -translate-x-1/2 overflow-hidden card bg-base-100 shadow-xl"
+  title={title}
+>
+  {
+    image && (
+      <Image
+        src={image}
+        width="1920"
+        height="1080"
+        format="webp"
+        alt={title}
+        class="card-img"
+        loading="eager"
+      />
+    )
+  }
+  <div
+    class="main-card relative leading-6 z-10 p-6 md:p-6 lg:p-8 card bg-base-100"
+  >
+    {
+      isBlog && (
+        <>
+          <h1 id="h1">{title}</h1>
+          <div class="info mt-4">
+            {displayDate && (
+              <div class="badge badge-neutral">{displayDate}</div>
+            )}
+            <span>&thinsp;</span>
+            {badge && <div class="badge badge-primary">{badge}</div>}
+            <div class="tags mt-2">
+              {hasTategories ? (
+                categories.map((categoroy) => (
+                  <>
+                    <a
+                      href={`/blog/categories/${categoroy}`}
+                      class="btn btn-xs btn-accent"
+                    >
+                      {categoroy}
+                    </a>
+                    <span>&thinsp;</span>
+                  </>
+                ))
+              ) : (
+                <div class="btn btn-xs btn-secondary btn-disabled rounded-full">
+                  {infoTest.noCategory}
+                </div>
+              )}
+              {hasTags ? (
+                tags.map((tag) => (
+                  <>
+                    <a
+                      href={`/blog/tag/${tag}`}
+                      class="btn btn-xs btn-secondary"
+                    >
+                      {tag}
+                    </a>
+                    <span>&thinsp;</span>
+                  </>
+                ))
+              ) : (
+                <div class="btn btn-xs btn-secondary btn-disabled">
+                  {infoTest.noTag}
+                </div>
+              )}
+            </div>
+          </div>
+          <hr />
+        </>
+      )
+    }
+    <slot />
+    {
+      isBlog && (
+        <>
+          <License title={title} url={url} />
+          <CommentWaline />
+        </>
+      )
+    }
+  </div>
+</div>

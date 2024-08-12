@@ -1,0 +1,98 @@
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseCard from "../components/BaseCard.astro";
+import Collapse from "../components/blog/collapse.astro";
+import Diff from "../components/blog/diff.astro";
+import Error from "../components/blog/error.astro";
+import Info from "../components/blog/info.astro";
+import Kbd from "../components/blog/kbd.astro";
+import Success from "../components/blog/success.astro";
+import Warning from "../components/blog/warning.astro";
+import TimeLine from "../components/page/TimeLine.astro";
+import LinkCard from "../components/page/LinkCard.astro";
+
+<BaseLayout title="About">
+  <BaseCard title="About">
+# 📄 关于 / About
+
+---
+
+## 🧾 简介
+
+我是一名初一学生，就读于 NFLS（南京外国语学校）。\
+这里是个很自由的地方（尽管其他人还是很卷），但我终于可以躺平了。\
+至于我的爱好嘛，很多：编程、乒乓球、画画、弹琴、魔方、下棋……\
+可悲的是，后面几项等到初中后就无影无踪，只剩下乒乓球参加了学校社团，以及**编程**。
+
+## 💻 我和编程
+
+~~Long long ago……~~\
+（学 Scratch 的内容就不写了吧）
+
+一开始学 Python，从未接触过“代码”的我曾认为 Python 是个很难的东西，但显然，事实并非如此。我很快对 Python 有了兴趣，然后就不上课了。毕竟：
+> *自学都能学会，还上课干嘛？*
+>
+过了一年，我又开始学习 C++。接着我发现，C++ 似乎比 Python 难，而且难得不止一点。当时的我也懒得自学，就跟着上课刷题，也不干别的——**怎么可能！**
+
+为了寻找乐趣，我研究起图形库，EasyX。
+>*众所周知，写游戏是学习任何语言的必经之路*
+>
+也正是这时候我开始在 CSDN 上写博客，都是些用 EasyX 写的小游戏，没想到还有挺多人看。
+过了半年就不写了，因为学业压力大（小升初）。我也不知道那个暑假干了些什么，反正跟编程没有啥关系。
+
+上了初中，情况有了些改变：
+- 有了学校的社团和一周两节的信息课
+- 学习压力相对变轻了（NFLS 是这样的）
+- 会编程的同学变多了
+
+这是个很好的消息，我可以和同学一起写代码了。
+
+话说回 C++：痛苦的信息竞赛。\
+虽然我基本不在信息课上打游戏（？），但一般都在干别的事，反正不听课。\
+我不喜欢抽象的东西，比如这些数据结构，一点儿也不直观（这也是为什么我还去学了 Unity，以及一些 UI 库）。\
+而且我一直不明白一件事：信息竞赛有什么用？能干嘛呢？\
+无非就是会一点算法，拿一个一等奖。每次看到那些大佬们又拿了什么什么奖，敬佩之余我还在想：他们真的会写代码吗？\
+算法竞赛就像是高等数学，虽然真的有人去学，但是几乎在生活中用不上。\
+> 截止至 2024.8 我还不明白 QAQ
+
+正如上文所说，我过了半年又开始研究起 Unity。接着又是 Python 的一些杂七杂八的内容。
+
+关于编程，就写到这吧~（感谢你看到这！）\
+你若是问我对于编程感悟最深的是……
+> **人生苦短，我用 Python！**
+
+## 📆 经历
+
+- 2023.9.1 进入 NFLS 初中
+
+## 🖥 关于网站
+### 这个小网站是怎么建成的？
+我曾经考虑过搭建一个属于自己的个人网站，能在互联网上拥有自己的一片天地，这如何不是一件好事？\
+坏消息是，我只会 Python 和 C++，你说我该怎么办？
+
+我开始寻找一些现成的建站工具，我甚至连前端是什么都不知道。直到后来我看到了别人的网站，很显然他们并没有用建站工具。
+
+于是，我开始学习 HTML 和 CSS，尝试自己写一个网站。很快，连续写了好几个很丑的网站之后，我不想玩了。
+
+虽然 HTML 和 CSS 十分简单的东西，但写起来很麻烦，而我又是一个很懒的人，不想写了，于是又开始寻找建站工具。\
+但这次不一样，我找的是框架，而不是工具。接着，我就找到了一样东西：Astro。
+
+作为一个懒人，我自然是寻找了一个主题（也就是现在这个），直接拿来用。\
+我对这个主题很满意，就 git clone 下来，稍微做修改内容，用了仅仅一天就搭建完成了，真的是懒人的福音。
+### 网站技术
+- **前端框架：** Astro
+- **主题：** Frosti
+- **代码托管：** Github
+- **部署平台：** Cloudflare Pages
+### 网站动态
+
+<TimeLine
+  items={[
+    { year: "2024.7.30", event: "本站建立" },
+    { year: "2024.8.2", event: "增加博客分类" },
+    { year: "2024.8.7", event: "增加标签、分类专栏" },
+  ]}
+/>
+
+  </BaseCard>
+</BaseLayout>
+

@@ -1,0 +1,88 @@
+---
+import dayjs from "dayjs";
+import { Image } from "astro:assets";
+import { infoTest } from "../consts";
+import type { EnvelopeInfo } from "../types";
+const { title, desc, image, pubDate, badge, categories, tags, url } =
+  Astro.props as EnvelopeInfo;
+const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
+const displayDate = dayjs(pubDate).format("YYYY-MM-DD");
+const hasTategories = categories && categories.length > 0;
+const hasTags = tags && tags.length > 0;
+const target = "_self";
+---
+
+<div
+  class="mt-8 relative w-full overflow-hidden card bg-base-100 shadow-xl flex flex-col lg:flex-row"
+>
+  <div
+    class="relative w-full h-auto rounded-3xl overflow-hidden card bg-base-100 flex-1 lg:order-1 order-2 flex"
+  >
+    <div class="relative w-full h-full p-6 flex flex-col justify-between">
+      <a href={url} target={target}>
+        <h2 id={title} class="p-2">
+          {title}
+        </h2>
+      </a>
+      <div class="m-2">{desc}</div>
+      <div class="m-2">
+        {displayDate && <div class="badge badge-neutral">{displayDate}</div>}
+        <span>&thinsp;</span>
+        {badge && <div class="badge badge-primary">{badge}</div>}
+        <div class="tags mt-2">
+          {
+            hasTategories ? (
+              categories.map((categoroy) => (
+                <>
+                  <a
+                    href={`/blog/categories/${categoroy}`}
+                    class="btn btn-xs btn-accent"
+                  >
+                    {categoroy}
+                  </a>
+                  <span>&thinsp;</span>
+                </>
+              ))
+            ) : (
+              <div class="btn btn-xs btn-secondary btn-disabled rounded-full">
+                {infoTest.noCategory}
+              </div>
+            )
+          }
+          {
+            hasTags ? (
+              tags.map((tag) => (
+                <>
+                  <a href={`/blog/tag/${tag}`} class="btn btn-xs btn-secondary">
+                    {tag}
+                  </a>
+                  <span>&thinsp;</span>
+                </>
+              ))
+            ) : (
+              <div class="btn btn-xs btn-secondary btn-disabled">
+                {infoTest.noTag}
+              </div>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {
+    image && (
+      <div class="relative w-full lg:w-2/5 h-auto rounded-none overflow-hidden lg:order-2 order-1">
+        <Image
+          src={image}
+          alt={title}
+          width="300"
+          height="200"
+          format="webp"
+          loading="lazy"
+          class="object-cover w-full h-full"
+        />
+      </div>
+    )
+  }
+</div>

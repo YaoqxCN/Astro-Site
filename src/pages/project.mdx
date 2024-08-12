@@ -1,0 +1,31 @@
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseCard from "../components/BaseCard.astro";
+import Collapse from "../components/blog/collapse.astro";
+import Diff from "../components/blog/diff.astro";
+import Error from "../components/blog/error.astro";
+import Info from "../components/blog/info.astro";
+import Kbd from "../components/blog/kbd.astro";
+import Success from "../components/blog/success.astro";
+import Warning from "../components/blog/warning.astro";
+import TimeLine from "../components/page/TimeLine.astro";
+import LinkCard from "../components/page/LinkCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import ProjectJS from "../components/ProjectJS.astro";
+
+<BaseLayout title="Project">
+  <BaseCard title="Project">
+  # 💡 作品 / Project
+
+---
+
+  </BaseCard>
+  <div class="mt-8 mb-8">
+    <ProjectCard
+      title="NFLS 论坛"
+      desc="一个专门为NFLSer们搭建的论坛"
+      url="http://nflser.top"
+      target="_blank"
+    />
+  </div>
+</BaseLayout>
+<ProjectJS />

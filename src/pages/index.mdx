@@ -1,0 +1,79 @@
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseCard from "../components/BaseCard.astro";
+import Collapse from "../components/blog/collapse.astro";
+import Diff from "../components/blog/diff.astro";
+import Error from "../components/blog/error.astro";
+import Info from "../components/blog/info.astro";
+import Kbd from "../components/blog/kbd.astro";
+import Success from "../components/blog/success.astro";
+import Warning from "../components/blog/warning.astro";
+import TimeLine from "../components/page/TimeLine.astro";
+import LinkCard from "../components/page/LinkCard.astro";
+
+<BaseLayout title="Home">
+  <BaseCard title="Home">
+    <div class="flex">
+      <div class="p-6">
+          # Hi, I'm Yaoqx! 👋
+
+          ---
+          
+          欢迎来到我的个人网站！
+      </div>
+    </div>
+
+  </BaseCard>
+
+  <BaseCard title="Home" image="/home.webp">
+
+# 🏠 主页 / Home
+---
+
+我，一名喜欢躺平的 NFLS 初中生。
+
+喜欢吃，喝，玩，乐 —— 当然还有编程。
+
+去逛逛这个小站吧！
+
+### 
+
+## ✈ 导航
+
+<div class="grid grid-cols-2 gap-4">
+  <LinkCard
+    title="博客"
+    desc="随手一写"
+    url="/blog"
+    target = "_self"
+  />
+  <LinkCard
+    title="项目"
+    desc="用代码写一些小玩具"
+    url="/project"
+    target = "_self"
+  />
+  <LinkCard
+    title="关于"
+    desc="关于我和网站"
+    url="/about"
+    target = "_self"
+  />
+  <LinkCard
+    title="友链"
+    desc="志同道合的朋友们"
+    url="/friend"
+    target = "_self"
+  />
+</div>
+
+## 📞 联系我
+
+- **QQ：** 1064245198
+- **CSDN：**[点这里](https://blog.csdn.net/2201_75791084)
+
+> ## 🖊 随记
+
+> 8.7：暑假的数理化课结束辣！
+
+  </BaseCard>
+</BaseLayout>

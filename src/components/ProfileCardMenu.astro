@@ -1,0 +1,58 @@
+---
+import { menuItems } from "../consts";
+import { Icon } from "astro-icon/components";
+---
+
+<ul
+  class="menu bg-base-100 w-full m-0 flex flex-col items-center lg:items-start"
+>
+  {
+    menuItems.map((item) => (
+    <li class="w-full relative">
+        {item.subItems ? (
+          <details class="menu-item">
+            <summary class="justify-center lg:justify-start items-center text-center text-xl md:text-3xl lg:text-xl font-bold p-4">
+              <span class="justify-center">
+                <Icon name={`menu/${item.svg}`} />
+              </span>
+              <span class="hidden lg:inline ml-2">{item.text}</span>
+            </summary>
+            <ul>
+              {item.subItems.map((subItem) => (
+                <li>
+                  <a
+                    tabindex="0"
+                    class="menu-item text-xl font-bold p-4"
+                    id={`header-${subItem.id}`}
+                    href={subItem.href}
+                    target={subItem.target || "_self"}
+                    aria-label={subItem.text}
+                  >
+                    <span class="inline-flex justify-center">
+                      <Icon name={`menu/${subItem.svg}`} />
+                    </span>
+                    <span class="hidden lg:inline ml-2">{subItem.text}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </details>
+        ) : (
+          <a
+            tabindex="0"
+            class="flex justify-center lg:justify-start items-center text-center text-xl md:text-3xl lg:text-xl font-bold p-4"
+            id={item.id}
+            title={item.id}
+            href={item.href}
+            target={item.target || "_self"}
+          >
+            <span class="inline-flex justify-center">
+              <Icon name={`menu/${item.svg}`} />
+            </span>
+            <span class="hidden lg:inline ml-2">{item.text}</span>
+          </a>
+        )}
+      </li>
+    ))
+  }
+</ul>

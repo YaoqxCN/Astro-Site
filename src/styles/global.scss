@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply scroll-smooth;
+}
+
+.no-card {
+  border-radius: var(--rounded-box, 1rem);
+}
+
+.link-card a,
+a {
+  @apply relative no-underline;
+}
+
+.main-card img {
+  @apply rounded-xl;
+}
+
+.main-card p a,
+.main-card li a {
+  @apply underline;
+}
+
+.main-card p a:hover,
+.main-card li a:hover {
+  color: oklch(var(--p));
+}
+
+
+.alert,
+.collapse,
+.diff{
+  @apply my-2;
+}
+
+html[data-theme="dracula"] {
+  --pagefind-ui-primary: oklch(var(--nc));
+  --pagefind-ui-text: oklch(var(--nc));
+  --pagefind-ui-background: oklch(var(--b1));
+  --pagefind-ui-border: oklch(var(--n));
+  --pagefind-ui-tag: oklch(var(--b1));
+  .highlight,
+  .frosti-code,
+  .frosti-code span {
+    color: var(--shiki-dark) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
+  .highlight-tools {
+    background-color: oklch(var(--n)) !important;
+  }
+}
+
+body {
+  @apply m-0 p-0 text-left bg-cover text-xl leading-7;
+  background-size: 100% 600px;
+}
+
+@media (max-width: 720px) {
+  body {
+    @apply text-lg;
+  }
+}
+
+@font-face {
+  font-family: 'Cascadia';
+  src: url('/fonts/CascadiaCode.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+ol {
+  @apply pl-[40px] list-decimal;
+}
+
+ul {
+  @apply pl-[40px] list-disc;
+}
+
+li::marker,
+.toc-number {
+  color: oklch(var(--a));
+}
+thead {
+  color: oklch(var(--s));
+}
+
+textarea,
+input {
+  @apply text-base;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply my-2 mb-2 mt-2;
+  text-shadow: 0.01em -0.01em #fff, -0.01em 0.01em #999, -0.1em 0.1em 5px #80808080;
+}
+
+h1 {
+  @apply text-5xl;
+}
+
+h2 {
+  @apply text-4xl;
+}
+
+h3 {
+  @apply text-3xl;
+}
+
+h4 {
+  @apply text-2xl;
+}
+
+h5 {
+  @apply text-xl;
+}
+
+strong,
+b {
+  @apply font-bold my-2;
+}
+
+em {
+  @apply my-2;
+}
+
+table {
+  @apply border-collapse my-2;
+  table-layout: fixed
+}
+
+table tr {
+  @apply h-10 border-0 border-gray-300;
+  border-color: oklch(var(--nc));
+}
+
+code {
+  font-family: 'Cascadia';
+  @apply text-xl p-[2px_5px] rounded-sm;
+}
+
+pre {
+  font-family: 'Cascadia';
+  padding: 10px;
+}
+
+blockquote {
+  @apply alert;
+}
+
+pre>code {
+  all: unset;
+}
+
+hr {
+  border: 0;
+  display: flex;
+  color: rgb(207, 207, 207);
+  background: linear-gradient(currentColor, currentColor) no-repeat center;
+  background-size: 100% 1px;
+  justify-content: space-between;
+  height: 50px;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+thead th {
+  border-bottom: 3px solid oklch(var(--bc) / 0.25);
+}
+
+.card figure{
+  @apply block;
+  @apply relative;
+}
+
+.frosti-code,
+.frosti-code span {
+  @apply text-sm;
+  background-color: oklch(var(--b2));
+}
+
+.highlight {
+  position: relative;
+  border-radius: var(--rounded-box, 1rem);
+  overflow: hidden;
+  margin: 0.5rem 0;
+  background-color: oklch(var(--b2));
+}
+
+.highlight-tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.0rem;
+  background-color: oklch(var(--nc));
+}
+
+.highlight-code{
+  @apply flex;
+}
+
+.highlight-code .code{
+  @apply flex-auto;
+  overflow: auto;
+  padding-right: 4em;
+}
+
+.highlight-code .gutter{
+  @apply flex-none text-right;
+  user-select: none;
+  border-right: 1px solid #888;
+}
+
+.highlight .code-lang {
+  font-family: 'Cascadia';
+  user-select: none;
+}
+
+.menu-item summary::after{
+  position: absolute;
+}
+
+.main-card p,
+.main-card ol,
+.main-card ul,
+.main-card li,
+.timeline-box {
+  @apply my-2 leading-normal;
+}
+
+.timeline{
+  @applt pl-0;
+}
+
+.timeline li {
+  @apply my-0 leading-none;
+}
+
+.footnotes{
+  @apply alert;
+}
