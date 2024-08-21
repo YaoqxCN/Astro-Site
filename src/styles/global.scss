@@ -15,6 +15,10 @@ a {
   @apply relative no-underline;
 }
 
+.medium-zoom-image--opened {
+  @apply rounded-xl;
+}
+
 .main-card img {
   @apply rounded-xl;
 }
@@ -58,6 +62,10 @@ html[data-theme="dracula"] {
 body {
   @apply m-0 p-0 text-left bg-cover text-xl leading-7;
   background-size: 100% 600px;
+}
+
+summary {
+  list-style: none; 
 }
 
 @media (max-width: 720px) {
