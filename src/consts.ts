@@ -25,7 +25,6 @@ export const infoTest = {
   noCategory: "其他",
   categoryCard: "分类",
   categoryPage: "分类：",
-  link: "链接: ",
   prevPage: "上一页",
   nextPage: "下一页",
 };
