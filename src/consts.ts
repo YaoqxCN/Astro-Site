@@ -85,7 +85,7 @@ export const menuItems = [
   }, // Friends page
   {
     id: "contact",
-    text: "邮件",
+    text: "邮箱",
     href: "mailto:1064245198@qq.com",
     svg: "contact",
   },

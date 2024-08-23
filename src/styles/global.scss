@@ -113,28 +113,27 @@ h3,
 h4,
 h5,
 h6 {
-  @apply my-2 mb-2 mt-2;
-  text-shadow: 0.01em -0.01em #fff, -0.01em 0.01em #999, -0.1em 0.1em 5px #80808080;
+  @apply my-2 mb-2 font-semibold;
 }
 
 h1 {
-  @apply text-5xl;
+  @apply text-5xl leading-tight;
 }
 
 h2 {
-  @apply text-4xl;
+  @apply text-4xl leading-snug;
 }
 
 h3 {
-  @apply text-3xl;
+  @apply text-3xl leading-normal;
 }
 
 h4 {
-  @apply text-2xl;
+  @apply text-2xl leading-relaxed;
 }
 
 h5 {
-  @apply text-xl;
+  @apply text-xl leading-relaxed;
 }
 
 strong,
