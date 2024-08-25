@@ -83,6 +83,13 @@ export const menuItems = [
     svg: "friend",
     target: "_self",
   }, // Friends page
+  {
+    id: "contact",
+    text: "邮箱",
+    href: "mailto:1064245198@qq.com",
+    svg: "contact",
+    target: "_self",
+  }, // Friends page
 ];
 
 // Social media and contact icons
@@ -105,12 +112,6 @@ export const socialIcons = [
     title: "Support me",
     svg: "support",
     target: "_self",
-  },
-  {
-    href: "mailto:1064245198@qq.com",
-    ariaLabel: "email",
-    title: "邮箱",
-    svg: "contact",
   },
   {
     href: "/rss.xml",
