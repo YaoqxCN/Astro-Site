@@ -49,7 +49,7 @@ const totalPages = Math.ceil(page.total / page.size);
 const pageLinks = generatePageLinks(totalPages);
 ---
 
-<BaseLayout title="Category">
+<BaseLayout title={params.category}>
   <BaseCard title="Category">
     <h1 id="h1">{infoTest.categoryPage + params.category}</h1>
   </BaseCard>
