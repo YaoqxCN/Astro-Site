@@ -143,63 +143,63 @@ declare module 'astro:content' {
   slug: "2024-07-07";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2024-08-05.md": {
 	id: "2024-08-05.md";
   slug: "2024-08-05";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2024-08-07.md": {
 	id: "2024-08-07.md";
   slug: "2024-08-07";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2024-08-09.md": {
 	id: "2024-08-09.md";
   slug: "2024-08-09";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2024-08-10.md": {
 	id: "2024-08-10.md";
   slug: "2024-08-10";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2024-08-15.md": {
 	id: "2024-08-15.md";
   slug: "2024-08-15";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2024-08-21.md": {
 	id: "2024-08-21.md";
   slug: "2024-08-21";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2024-08-24.md": {
 	id: "2024-08-24.md";
   slug: "2024-08-24";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 "2024-08-26.md": {
 	id: "2024-08-26.md";
   slug: "2024-08-26";
   body: string;
   collection: "blog";
-  data: any
+  data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
 };
 
@@ -211,5 +211,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = never;
+	export type ContentConfig = typeof import("./../src/content/config.js");
 }
