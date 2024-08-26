@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2024-08-09.md",
+                "file": "2024-08-26.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2024-08-09.md",
+                "file": "2024-08-26.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2024-08-09.md",
+                "file": "2024-08-26.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2024-08-09.md"
+                "file": "2024-08-26.md"
               }
             }
           }
@@ -148,6 +148,8 @@
   },
   "active": "e7ab1eabd5857a7f",
   "lastOpenFiles": [
+    "2024-08-09.md",
+    "2024-08-26.md",
     "2024-08-10.md",
     "2024-08-15.md",
     "2024-08-21.md",
@@ -156,7 +158,6 @@
     "Pasted image 20240824163849.png",
     "2024-08-05.md",
     "2024-08-07.md",
-    "2024-07-07.md",
-    "2024-08-09.md"
+    "2024-07-07.md"
   ]
 }
