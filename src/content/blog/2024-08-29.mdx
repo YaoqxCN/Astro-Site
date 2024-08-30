@@ -1,0 +1,164 @@
+---
+title: Netlify 配置 Waline 评论系统
+description: 从我建成个人网站以来，一个月了，竟然还没配置过评论系统，一直用的别人的。那么今天就稍微研究一下，使用 netlify 配置 waline 评论系统！
+pubDate: 2024 8 29
+categories:
+  - 技术
+tags:
+  - Netlify
+  - Waline
+image: https://pic.imgdb.cn/item/66d08f0ad9c307b7e95ff865.png
+---
+
+import Collapse from "../../components/blog/collapse.astro"
+import Diff from "../../components/blog/diff.astro"
+import Error from "../../components/blog/error.astro";
+import Info from "../../components/blog/info.astro";
+import Kbd from "../../components/blog/kbd.astro"
+import Success from "../../components/blog/success.astro";
+import Warning from "../../components/blog/warning.astro";
+import TimeLine from "../../components/page/TimeLine.astro";
+import LinkCard from "../../components/page/LinkCard.astro";
+
+
+从我建成个人网站以来，一个月了，竟然还没配置过评论系统，一直用的别人的 awa。
+
+那么今天就稍微研究一下，顺便水……不是，写一篇博客吧。
+
+**使用 Netlify 为你的静态站点部署 Waline 评论系统！**
+
+<Warning>注意，这里不需要你的站点部署在 Netlify</Warning>
+
+话不多说，正片开始——
+
+> 官方文档：[https://waline.js.org/guide/deploy/netlify.html](https://waline.js.org/guide/deploy/netlify.html)
+
+## 准备工作
+
+- 一个 [Netlify](https://netlify.com) 账号
+- 一个 [Github](https://github.com) 账号
+- 一个 [Leancloud](https://console.leancloud.app/apps) 账号
+
+## 简介
+
+### Netlify
+
+Netlify 是一个免费的静态网页部署平台，相比于 vercel，它在国内可以正常访问。
+
+<LinkCard
+  title="Netlify"
+  desc="https://app.netlify.com/"
+  url="https://app.netlify.com/"
+/> 
+
+![](https://tse2-mm.cn.bing.net/th/id/OIP-C.fVbgHQU3ZeoJErXovw5ghwAAAA?rs=1&pid=ImgDetMain)
+
+### Waline
+
+Waline 是一个免费的安全的评论系统，不需要任何付费即可给静态网页搭建完善的评论系统。
+
+<LinkCard
+  title="Waline"
+  desc="https://waline.js.org/"
+  url="https://waline.js.org/"
+/> 
+
+![](https://pic.imgdb.cn/item/66d08f0ad9c307b7e95ff865.png)
+
+### Leancloud
+
+Leancloud 是一个免费的后端云服务提供商。
+
+<LinkCard
+  title="Leancloud"
+  desc="https://console.leancloud.app/"
+  url="https://console.leancloud.app/"
+/> 
+
+## 开始搭建
+
+### Fork 仓库
+
+打开 Github，打开 Waline 官方提供的 Netlify 部署仓库：
+
+<LinkCard
+  title="netlify-starter"
+  desc="https://github.com/walinejs/netlify-starter/"
+  url="https://github.com/walinejs/netlify-starter/"
+/> 
+
+点击 Fork，新建仓库：
+
+![](https://waline.js.org/assets/netlify-1-CbGWaP5q.png)
+
+### 设置 Leancloud
+
+打开 [Leancloud 控制台](https://console.leancloud.app/apps) ，点击左上角“创建应用”。
+
+<Info>这里最好选择国际版，因为国内版需要备案，比较复杂。</Info>
+
+![](https://pic.imgdb.cn/item/66d15075d9c307b7e938532e.png)
+
+接着，在新建应用的设置中，选择“开发版”，名字随便填：
+
+![](https://pic.imgdb.cn/item/66d1519cd9c307b7e9393506.png)
+
+接着点击创建。
+
+点击卡片标题进入应用设置，点击左下角“设置 -> 应用凭证”
+
+![](https://pic.imgdb.cn/item/66d15392d9c307b7e93db232.png)
+
+记住这上面的三行密钥，之后要用（别告诉其他人）：
+
+![](https://pic.imgdb.cn/item/66d153e2d9c307b7e93e5658.png)
+
+### 部署 Netlify
+
+打开 [Netlify 控制台](https://app.netlify.com/)，如图选择 Add new site -> Import an existing project
+
+![](https://pic.imgdb.cn/item/66d162ecd9c307b7e952225e.png)
+
+然后选择 Github：
+
+![](https://pic.imgdb.cn/item/66d16351d9c307b7e952f34f.png)
+
+接着会弹出一个授权窗口，按指示确认即可。
+
+选择刚刚 Fork 的仓库：
+
+![](https://pic.imgdb.cn/item/66d163add9c307b7e9539e3d.png)
+
+在部署设置页面，站点名称随便填（注意不能和已有站点冲突）。
+
+在页面最下面的环境变量中，就需要用到之前准备的 Leancloud 密钥了，填写规则：
+
+- `LEAN_ID`: 密钥中的 AppID
+- `LEAN_KEY`: 密钥中的 AppKey
+- `LEAN_MASTER_KEY`: 密钥中的 MasterKey
+
+![](https://pic.imgdb.cn/item/66d16461d9c307b7e9551e08.png)
+
+接着点击“Deploy netlify-starter”就好了！
+
+### 查看评论系统
+
+站点部署完成之后，进入站点信息，找到左侧的“Logs -> Functions”，紧接着就能看到部署完成的 comment 选项：
+
+![](https://pic.imgdb.cn/item/66d16576d9c307b7e957c77c.png)
+
+点开之后，Endpoint 就是评论服务器地址啦：
+
+![](https://pic.imgdb.cn/item/66d16ed7d9c307b7e9667660.png)
+
+打开链接，就可以看到部署完成的评论服务器了：
+
+在链接结尾加上 `/ui` ，登录自己的 Github 账号即可进入评论管理。
+
+![](https://pic.imgdb.cn/item/66d16f1ed9c307b7e96720f2.png)
+
+---
+
+恭喜你部署完成自己的评论系统！
+
+本文就到这里，拜~ ( •̀ ω •́ )✧

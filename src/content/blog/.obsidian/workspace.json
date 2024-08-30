@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2024-08-26.md",
+                "file": "2024-08-29.mdx",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2024-08-26.md",
+                "file": "2024-08-29.mdx",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2024-08-26.md",
+                "file": "2024-08-29.mdx",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,30 +125,32 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2024-08-26.md"
+                "file": "2024-08-29.mdx"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
+      "daily-notes:打开/创建今天的日记": false,
       "command-palette:打开命令面板": false
     }
   },
   "active": "e7ab1eabd5857a7f",
   "lastOpenFiles": [
     "2024-08-26.mdx",
+    "2024-08-29.md",
+    "2024-08-29.mdx",
     "2024-08-26.md",
     "2024-08-21.md",
     "2024-08-24.md",
