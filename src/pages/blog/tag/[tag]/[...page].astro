@@ -20,7 +20,7 @@ export async function getStaticPaths({ paginate }: { paginate: any }) {
     );
     return paginate(filtered_posts, {
       params: { tag },
-      pageSize: 5,
+      pageSize: 8,
     });
   });
 }
@@ -36,6 +36,7 @@ function generatePageLinks(totalPages: number): {
     active: [] as string[],
     hidden: [] as string[],
   };
+
   if (totalPages > 3) {
     pages.active.push("1");
     pages.active.push("...");
@@ -50,13 +51,15 @@ function generatePageLinks(totalPages: number): {
   }
   return pages;
 }
+
 const totalPages = Math.ceil(page.total / page.size);
 const pageLinks = generatePageLinks(totalPages);
 ---
 
-<BaseLayout title={params.tag}>
+<BaseLayout title="Tag">
   <BaseCard title="Tag">
     <h1 id="h1">{infoTest.tagPage + params.tag}</h1>
+    <hr />
   </BaseCard>
   <div class="mt-8 mb-8">
     {
@@ -180,5 +183,4 @@ const pageLinks = generatePageLinks(totalPages);
       </svg>
     </a>
   </div>
-  <br />
 </BaseLayout>

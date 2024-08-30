@@ -5,8 +5,7 @@ import { infoTest } from "../consts";
 import type { EnvelopeInfo } from "../types";
 const { title, desc, image, pubDate, badge, categories, tags, url } =
   Astro.props as EnvelopeInfo;
-const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
-const displayDate = dayjs(pubDate).format("YYYY-MM-DD");
+const displayDate = dayjs(pubDate).format("ddd MMM DD YYYY");
 const hasTategories = categories && categories.length > 0;
 const hasTags = tags && tags.length > 0;
 const target = "_self";
@@ -20,15 +19,15 @@ const target = "_self";
   >
     <div class="relative w-full h-full p-6 flex flex-col justify-between">
       <a href={url} target={target}>
-        <h2 id={title} class="p-2">
+        <h1 id={title} class="p-2 m-0">
           {title}
-        </h2>
+        </h1>
       </a>
       <div class="m-2">{desc}</div>
       <div class="m-2">
         {displayDate && <div class="badge badge-neutral">{displayDate}</div>}
         <span>&thinsp;</span>
-        {badge && <div class="badge badge-primary ml-2">{badge}</div>}
+        {badge && <div class="badge badge-primary">{badge}</div>}
         <div class="tags mt-2">
           {
             hasTategories ? (
@@ -79,7 +78,7 @@ const target = "_self";
           width="300"
           height="200"
           format="webp"
-          loading="lazy"
+          loading="eager"
           class="object-cover w-full h-full"
         />
       </div>

@@ -9,13 +9,16 @@ import { infoTest } from "../../consts";
 
 export async function getStaticPaths({ paginate }: { paginate: any }) {
   const posts = await getCollection("blog");
-  const topPosts = posts.filter((post) => post.data.badge === "置顶");
-  const otherPosts = posts.filter((post) => post.data.badge !== "置顶");
+  const topPosts = posts.filter((post) => post.data.badge === "Pin");
+  const otherPosts = posts.filter((post) => post.data.badge !== "Pin");
+
   topPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
   otherPosts.sort(
     (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
   );
+
   const sortedPosts = [...topPosts, ...otherPosts];
+
   return paginate(sortedPosts, { pageSize: 8 });
 }
 
@@ -29,6 +32,7 @@ function generatePageLinks(totalPages: number): {
     active: [] as string[],
     hidden: [] as string[],
   };
+
   if (totalPages > 3) {
     pages.active.push("1");
     pages.active.push("...");
@@ -43,11 +47,12 @@ function generatePageLinks(totalPages: number): {
   }
   return pages;
 }
+
 const totalPages = Math.ceil(page.total / page.size);
 const pageLinks = generatePageLinks(totalPages);
 ---
 
-<BaseLayout title="博客">
+<BaseLayout title="Blog">
   <BaseCard title="search">
     <Search
       id="search"
@@ -147,7 +152,7 @@ const pageLinks = generatePageLinks(totalPages);
       }
     </div>
     <a
-    href={page.url.next ? page.url.next : `javascript:`}
+      href={page.url.next ? page.url.next : `javascript:`}
       class={page.url.next
         ? `btn bg-base-100 shadow-xl`
         : `btn btn-disabled bg-base-100 shadow-xl`}

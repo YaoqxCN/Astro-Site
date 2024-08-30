@@ -6,13 +6,13 @@
     opacity: 1;
     position: relative;
   }
-
+  
   html.is-animating .transition-main {
     opacity: 0;
     transform: translateY(-40px); 
     transition: 500ms ease;
   }
-
+  
   html.is-leaving .transition-main {
     transform: translateY(40px);
     transition: 500ms ease;

@@ -19,6 +19,7 @@ const displayDate = dayjs(pubDate).format(DATE_FORMAT);
 const hasTategories = categories && categories.length > 0;
 const hasTags = tags && tags.length > 0;
 ---
+
 <div
   class="mb-8 relative left-1/2 transform -translate-x-1/2 overflow-hidden card bg-base-100 shadow-xl"
   title={title}
@@ -43,7 +44,7 @@ const hasTags = tags && tags.length > 0;
       isBlog && (
         <>
           <h1 id="h1">{title}</h1>
-          <div class="info mt-4">
+          <div class="info mt-2">
             {displayDate && (
               <div class="badge badge-neutral">{displayDate}</div>
             )}

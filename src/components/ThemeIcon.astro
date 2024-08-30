@@ -6,9 +6,9 @@
   class="flex justify-center card bg-base-100 btn btn-ghost w-auto h-10"
   id="themeToggle"
 >
-  <label for="themeToggle1" id="themeLabel1"
+  <label for="themeToggle1" id="themeLabel1" class="hidden"
     ><span class="sr-only">Theme Toggle</span>
-    <input type="checkbox" id="themeToggle1" class="hidden"/>
+    <input type="checkbox" id="themeToggle1" />
     <svg
       class="swap-on fill-current w-10 h-10"
       xmlns="http://www.w3.org/2000/svg"
@@ -57,7 +57,6 @@
       localStorage.setItem("theme", theme);
     };
 
-
     const themeToggle = document.getElementById("themeToggle");
     const themeLabel1 = document.getElementById(
       "themeLabel1"
@@ -85,7 +84,6 @@
 
     syncThemeToggle();
 
-    // Add classes if elements are not null
     [themeLabel1, themeLabel2].forEach((label) => {
       if (label) {
         label.classList.remove("hidden");
@@ -104,6 +102,7 @@
       themeToggle1.disabled = true;
       themeToggle.addEventListener("click", handleToggleClick);
     }
+
     if (themeToggle2) {
       themeToggle2.addEventListener("click", handleToggleClick);
     }

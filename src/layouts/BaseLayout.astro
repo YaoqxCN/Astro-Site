@@ -8,14 +8,9 @@ import Footer from "../components/Footer.astro";
 import Content from "../components/Content.astro";
 import TagCard from "../components/TagCard.astro";
 import CategoryCard from "../components/CategoryCard.astro";
-import {
-  SITE_TAB,
-  SITE_TITLE,
-  SITE_DESCRIPTION,
-} from "../consts";
+import { SITE_TAB, SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 const { title, image, includeSidebar = true } = Astro.props;
 ---
-
 
 <!doctype html>
 <html lang="zh-cn" class="bg-base-300" data-theme="winter">
@@ -37,7 +32,6 @@ const { title, image, includeSidebar = true } = Astro.props;
     </script>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} image={image} />
   </head>
-
   <body>
     <Header title={SITE_TITLE} />
     <div class="max-w-7xl m-auto">
@@ -62,13 +56,11 @@ const { title, image, includeSidebar = true } = Astro.props;
           class="col-span-3 md:col-span-4 lg:col-span-3 bg-white bg-opacity-0 p-2 order-1 md:order-2"
         >
           <div>
-            <main>
-              <main id="swup" class="detail transition-main">
-                <slot />
-                <Footer />
-              </main>
-              <br />
+            <main id="swup" class="detail transition-main">
+              <slot />
+              <Footer />
             </main>
+            <br />
           </div>
         </div>
       </div>
