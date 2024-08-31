@@ -1,0 +1,84 @@
+---
+title: "Fastrans 开发日记 #2"
+description: 终于完成了核心功能，也就是快捷键随时打开窗口。另外，还重写了 UI 布局，解决 exe 窗口图标无法显示的功能。总之，现在可以快乐地使用 exe 啦！
+pubDate: 2024 8 31
+categories:
+  - 技术
+tags:
+  - Python
+  - Fastrans
+  - 项目
+---
+import Collapse from "../../components/blog/collapse.astro";
+import Diff from "../../components/blog/diff.astro";
+import Error from "../../components/blog/error.astro";
+import Info from "../../components/blog/info.astro";
+import Kbd from "../../components/blog/kbd.astro";
+import Success from "../../components/blog/success.astro";
+import Warning from "../../components/blog/warning.astro";
+import TimeLine from "../../components/page/TimeLine.astro";
+import LinkCard from "../../components/page/LinkCard.astro";
+
+就过了几天，我的 Fastrans 项目（ https://github.com/YaoqxCN/Fastrans ）又更新了两个版本，现在是 `v1.1.1`。（求个 star 谢谢！）
+
+<LinkCard 
+  title="Github 链接"
+  desc="https://github.com/YaoqxCN/Fastrans"
+  url="https://github.com/YaoqxCN/Fastrans"
+/>
+
+上次我初步实现了 Fastrans 的翻译功能以及 UI，可以看看 [上次的文章](./2024-08-26)。
+
+那么这两次更新我都干了些什么呢？往下看吧：
+
+## 预览
+
+<Diff l="https://pic.imgdb.cn/item/66d2b235d9c307b7e9e7aa4a.png" r="https://pic.imgdb.cn/item/66d2b899d9c307b7e9f3678f.png"></Diff>
+
+## 更新内容
+
+<Info>
+    完整 CHANGELOG 文档：https://github.com/YaoqxCN/Fastrans/blob/master/CHANGELOG.md
+</Info>
+
+### UI 主题
+
+还记得我之前用的是 `qt-material` 主题，现在换成了 [`pyqt-fluent-widget`](https://github.com/zhiyiYo/PyQt-Fluent-Widgets)。
+
+为什么呢？
+
+主要是我觉得 `qt-material` 有些过于花哨，还是 windows 风格的 fluent UI 比较适合这样的一个工具软件。
+
+由于 fluent UI 的 UI 控件代码和 pyqt5 自带的不太一样，于是我放弃了 qtdesigner。什么？我要自己写 UI 了？不可能！**AI，启动！**
+
+嘿嘿，我让 AI 帮我改了代码，然后手动删去冗余内容，深度优化了 UI 代码。接着我还添加了一些 `layout` 布局，让 UI 可以自适应窗口大小变化。
+
+### 核心功能
+
+之前说过，我预想的核心功能就是快捷键唤出窗口，实现随时随地翻译，不需要打开浏览器打开百度翻译等等步骤。
+
+上一篇文章中，我不知道什么原因没办法实现最小化系统托盘，因为我试了很多篇文章的解决办法，都没用。怎么办呢？当然是我们万能的 AI 了！成功解决。
+
+接着又有问题了，我使用快捷键没法打开窗口！经测试，程序确实识别到了快捷键。我于是又开始查文章，找解决方法。没用。怎么办呢？当然又是我们万能的 AI 了！据他所说，是由于线程冲突相关的问题导致的。也成功解决了。
+
+于是现在就能愉快地按下 `Alt + W` 来进行翻译啦。
+
+什么？你问我这是什么 AI？哦，那就是大名鼎鼎的 **Fitten Code**。
+
+至于解决方法，我可以单独写一篇文章来讲讲。
+
+### 打包 EXE
+
+写完代码，当然要把软件打包成 exe 格式了。
+
+这时我发现一个问题，我之前的打包的大小都很大，有 90 M，十分夸张。而且运行后的程序窗口图标和任务栏图标都没法正确显示。
+
+程序大小的问题很好解决，我之前没有用虚拟环境打包，现在好了。
+
+而第二个问题就比较难整了，寻找了很多篇文章。你以为我又要找 AI？当然这次没有。在文章中找到了解决办法，比较玄学，链接在这：http://t.csdnimg.cn/lVChy
+
+---
+
+更新就这么多，应该也不少吧？
+
+如果你觉得还不错，给我的仓库点个 star 吧，鼓励鼓励我继续开发！
