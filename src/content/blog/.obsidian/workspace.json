@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2024-08-29.mdx",
+                "file": "2024-09-03.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2024-08-29.mdx",
+                "file": "2024-09-03.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2024-08-29.mdx",
+                "file": "2024-09-03.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2024-08-29.mdx"
+                "file": "2024-09-03.md"
               }
             }
           }
@@ -148,13 +148,14 @@
   },
   "active": "e7ab1eabd5857a7f",
   "lastOpenFiles": [
+    "2024-08-31.mdx",
+    "2024-08-29.mdx",
+    "2024-09-03.md",
     "2024-08-21.md",
     "2024-08-24.md",
     "2024-08-07.md",
     "2024-08-05.md",
     "2024-07-07.md",
-    "2024-08-31.mdx",
-    "2024-08-29.mdx",
     "2024-08-26.mdx",
     "2024-08-31.md",
     "2024-08-29.md",
