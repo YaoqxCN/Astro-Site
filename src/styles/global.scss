@@ -29,7 +29,12 @@ a {
 
 .main-card p a,
 .main-card li a {
-  @apply underline;
+  @apply underline inline-flex;
+
+  svg {
+    @apply inline-block;
+    vertical-align: -0.25rem;
+  }
 }
 
 .main-card p a:hover,
@@ -214,7 +219,7 @@ thead th {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 1.0rem;
+  padding: 0.5rem 1rem;
   background-color: oklch(var(--nc));
 }
 
@@ -252,7 +257,7 @@ thead th {
 }
 
 .timeline{
-  @applt pl-0;
+  @apply pl-0;
 }
 
 .timeline li {
