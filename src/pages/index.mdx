@@ -1,76 +1,86 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BaseCard from "../components/BaseCard.astro";
-import Collapse from "../components/blog/collapse.astro";
-import Diff from "../components/blog/diff.astro";
-import Error from "../components/blog/error.astro";
-import Info from "../components/blog/info.astro";
-import Kbd from "../components/blog/kbd.astro";
-import Success from "../components/blog/success.astro";
-import Warning from "../components/blog/warning.astro";
-import TimeLine from "../components/page/TimeLine.astro";
-import LinkCard from "../components/page/LinkCard.astro";
+import Collapse from "../components/mdx/Collapse.astro";
+import Diff from "../components/mdx/Diff.astro";
+import Error from "../components/mdx/Error.astro";
+import Info from "../components/mdx/Info.astro";
+import Kbd from "../components/mdx/Kbd.astro";
+import Success from "../components/mdx/Success.astro";
+import Warning from "../components/mdx/Warning.astro";
+import TimeLine from "../components/mdx/TimeLine.astro";
+import LinkCard from "../components/mdx/LinkCard.astro";
 
-<BaseLayout title="主页">
+<BaseLayout title="Home">
   <BaseCard title="Home">
     <div class="flex">
       <div class="p-6">
-          # Hi, I'm Yaoqx! 👋
+          # Hi there! 👋
 
-          ---
-          
-          欢迎来到我的个人网站！
+          This is the Frosti theme
+
+          A clean, elegant, and fast static blog template
       </div>
     </div>
 
   </BaseCard>
 
-  <BaseCard title="Home" image="/home.webp">
+  <BaseCard title="Home" image="/index.webp">
+# Frosti Introduction
 
-# 🏠 主页 / Home
 ---
 
-我，一名喜欢躺平的 NFLS 初中生。
+## Welcome to Frosti Blog Template
 
-喜欢吃，喝，玩，乐 —— 当然还有编程。
+### 🧊 Frosti
 
-去逛逛这个小站吧！
+**A clean, elegant, and fast static blog template! 🚀 Developed with [Astro](https://astro.build/)!**
 
-### 
+[**🖥️ Frosti Demo**](https://frosti.saroprock.com)&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;[**🌏 Chinese README**](https://github.com/EveSunMaple/Frosti/blob/main/README.zh-CN.md)&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;[**❤️ My Blog**](https://www.saroprock.com)
 
-## ✈ 导航
+### Why Choose Frosti?
 
-<div class="grid grid-cols-2 gap-4">
-  <LinkCard
-    title="博客"
-    desc="随手一写"
-    url="/blog"
-    target = "_self"
-  />
-  <LinkCard
-    title="项目"
-    desc="用代码写一些小玩具"
-    url="/project"
-    target = "_self"
-  />
-  <LinkCard
-    title="关于"
-    desc="关于我和网站"
-    url="/about"
-    target = "_self"
-  />
-  <LinkCard
-    title="友链"
-    desc="志同道合的朋友们"
-    url="/friend"
-    target = "_self"
-  />
-</div>
+- **Lightning-fast Access Speed and Excellent SEO**: Your blog content spreads quickly and efficiently.
+- **View Transition Animations**: Smooth visual experience with Swup.
+- **Integrated Sidebar**: Includes social info cards, theme switch, back-to-top button, and persistent article directory.
+- **Powerful Search Functionality**: Easily search articles using pagefind.
+- **Day/Night Mode**: Adapt to different reading environments.
+- **Rich Components**: Collapsible pages, link cards, timeline components, various alerts, code block copy button, image comparison, and end-of-article copyright information.
+- **Comment System**: Built with [Waline](https://waline.js.org/) for interactive discussions.
+- **Responsive Design**: Crafted with [Tailwind CSS](https://tailwindcss.com/) and [daisyUI](https://daisyui.com/) to fit different devices.
 
+### Feature Highlights
 
-## 🖊 随记
+- **Easy Installation and Use**: Install with just one command, customize everything in `consts.ts`.
+- **Variety of Article Components**: Enhance the presentation of your blog content.
 
-> 最近在写新博客网站，可以先看看哦：https://yaoqx-demo.netlify.app
-> 没时间写博客了捏
+### How to Get Started?
+
+1. **Install Frosti**
+
+   Simply run the following command in your terminal:
+
+   ```sh
+   npm create astro@latest -- --template EveSunMaple/Frosti
+   ```
+
+2. **Configure the Comment System**
+
+   Set up [Waline](https://waline.js.org/) to enable comments. Check `src\components\Comment.astro` for details.
+
+### Future Plans
+
+- **Integrate Headless CMS**.
+- **Fix Known Style Bugs**.
+- **More Features Coming Soon...**
+
+### Special Thanks
+
+A big thanks to @[Saicaca](https://github.com/saicaca) and @[WRXinYue](https://github.com/WRXinYue) for their inspiration and help with Frosti.
+
+### Star History
+
+![Star History Chart](https://api.star-history.com/svg?repos=EveSunMaple/Frosti&type=Date)
+
 
   </BaseCard>
 </BaseLayout>

@@ -1,6 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import { infoTest } from "../consts";
+import CardAside from "../layouts/CardAside.astro";
+import TagButton from "../widget/TagButton.astro";
+import { t } from "i18next";
 
 interface TagCount {
   tag: string;
@@ -9,7 +11,6 @@ interface TagCount {
 
 export async function getTagsWithCounts(): Promise<TagCount[]> {
   const posts = await getCollection("blog");
-
   const tagMap = new Map<string, number>();
 
   posts.forEach((post) => {
@@ -21,25 +22,16 @@ export async function getTagsWithCounts(): Promise<TagCount[]> {
 
   return Array.from(tagMap, ([tag, count]) => ({ tag, count }));
 }
+
 const tagsWithCounts = await getTagsWithCounts();
 ---
 
-<div class="bg-base-100 shadow-xl w-full mb-8 no-card p-4">
-  <div class="p-4">
-    <div class="btn btn-sm btn-ghost no-animation w-full font-bold">
-      {infoTest.tagCard}
-    </div>
-  </div>
-  <div class="flex flex-wrap gap-2.5 w-full max-h-[300px] overflow-auto">
+<CardAside title={t("label.tagCard")}>
+  <div class="flex flex-wrap gap-2 w-full max-h-[300px] p-1 overflow-auto">
     {
       tagsWithCounts.map(({ tag, count }) => (
-        <span class="inline">
-          <a href={`/blog/tag/${tag}`} class="btn btn-sm">
-            {tag}
-            <div class="badge badge-secondary">{count}</div>
-          </a>
-        </span>
+        <TagButton text={tag} count={count} href={`/blog/tags/${tag}`} type="tag" />
       ))
     }
   </div>
-</div>
+</CardAside>

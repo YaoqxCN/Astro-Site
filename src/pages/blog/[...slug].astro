@@ -1,11 +1,12 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BaseCard from "../../components/BaseCard.astro";
+import TocCollapse from "../../components/mdx/TocCollapse.astro";
 import { type CollectionEntry, getCollection } from "astro:content";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
-  return posts.map((post: { slug: any }) => ({
+  const blog = await getCollection("blog");
+  return blog.map((post: { slug: any }) => ({
     params: { slug: post.slug },
     props: { post },
   }));
@@ -18,7 +19,7 @@ const { post } = Astro.props;
 const { Content, remarkPluginFrontmatter } = await post.render();
 ---
 
-<BaseLayout title={post.data.title}>
+<BaseLayout title={post.data.title} image={post.data.image}>
   <BaseCard
     title={post.data.title}
     image={post.data.image}
@@ -26,10 +27,11 @@ const { Content, remarkPluginFrontmatter } = await post.render();
     badge={post.data.badge}
     categories={post.data.categories}
     tags={post.data.tags}
-    word={remarkPluginFrontmatter.wordCount}
-    time={remarkPluginFrontmatter.minutesRead}
+    word={remarkPluginFrontmatter.totalCharCount}
+    time={remarkPluginFrontmatter.readingTime}
     isBlog="true"
   >
+    <TocCollapse headings={remarkPluginFrontmatter.headings} />
     <Content />
   </BaseCard>
 </BaseLayout>

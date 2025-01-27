@@ -4,6 +4,7 @@ declare module 'astro:content' {
 			Content: import('astro').MarkdownInstance<{}>['Content'];
 			headings: import('astro').MarkdownHeading[];
 			remarkPluginFrontmatter: Record<string, any>;
+			components: import('astro').MDXInstance<{}>['components'];
 		}>;
 	}
 }
@@ -238,13 +239,6 @@ declare module 'astro:content' {
 "2024-09-04.md": {
 	id: "2024-09-04.md";
   slug: "2024-09-04";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"2024-09-07.md": {
-	id: "2024-09-07.md";
-  slug: "2024-09-07";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
