@@ -2,7 +2,7 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 // Site title and description
-export const SITE_LANG = "ch";
+export const SITE_LANG = "zh";
 export const SITE_TAB = "XLOG";
 export const SITE_TITLE = "XLOG";
 export const SITE_DESCRIPTION = "XN 的小站";
@@ -10,11 +10,11 @@ export const DATE_FORMAT = "YYYY MM DD";
 
 // User profile information
 export const USER_NAME = "XN";
-export const USER_SITE = "https://frosti.saroprock.com"; // At the same time, this is also the site retrieved by the i18n configuration.
+export const USER_SITE = "https://yaoqx.netlify.app"; // At the same time, this is also the site retrieved by the i18n configuration.
 export const USER_AVATAR = "/profile.jpg";
 
 // Server and transition settings
-export const SERVER_URL = "https://demo.saroprock.com";
+export const SERVER_URL = "https://yaoqx-comment.netlify.app/.netlify/functions/comment";
 
 // Theme settings
 export const DAISYUI_THEME = {
@@ -62,7 +62,7 @@ export const menuItems = [
   }, // Blog page with sub-items
   {
     id: "project",
-    text: "项目",
+    text: "作品",
     href: "/project",
     svg: "material-symbols:code-blocks-outline",
     target: "_self",
@@ -86,19 +86,13 @@ export const menuItems = [
 // Social media and contact icons
 export const socialIcons = [
   {
-    href: "https://afdian.net/a/saroprock",
-    ariaLabel: "Support my work",
-    title: "Support",
-    svg: "ri:cup-line",
-  },
-  {
-    href: "https://github.com/EveSunMaple",
+    href: "https://github.com/YaoqxCN",
     ariaLabel: "Github",
     title: "Github",
     svg: "ri:github-line",
   },
   {
-    href: "https://space.bilibili.com/438392347",
+    href: "https://space.bilibili.com/2064579635",
     ariaLabel: "BiliBili",
     title: "BiliBili",
     svg: "ri:bilibili-line",
