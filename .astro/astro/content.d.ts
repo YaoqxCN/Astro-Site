@@ -229,16 +229,16 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".mdx"] };
-"2024-09-03.md": {
-	id: "2024-09-03.md";
-  slug: "2024-09-03";
+"2024-09-04.md": {
+	id: "2024-09-04.md";
+  slug: "2024-09-04";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"2024-09-04.md": {
-	id: "2024-09-04.md";
-  slug: "2024-09-04";
+"2025-01-27.md": {
+	id: "2025-01-27.md";
+  slug: "2025-01-27";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
