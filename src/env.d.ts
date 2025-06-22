@@ -1,10 +1,36 @@
 /// <reference path="../.astro/types.d.ts" />
 /// <reference types="astro/client" />
-interface ImportMetaEnv {
-  readonly NOTION_API_KEY: string;
-  readonly NOTION_SHUOSHUO_PAGE_ID: string;
-}
 
 interface ImportMeta {
-  readonly env: ImportMetaEnv;
+  env: {
+    PROD: boolean;
+    DEV: boolean;
+  };
+}
+
+declare module "dayjs" {
+  interface Dayjs {
+    format: (template?: string) => string;
+    locale: {
+      (): string;
+      (preset: string, object?: Partial<ILocale>): Dayjs;
+    };
+  }
+
+  interface ILocale {
+    name: string;
+    weekdays?: string[];
+    months?: string[];
+    [key: string]: any;
+  }
+
+  export default function dayjs(date?: any): Dayjs;
+  namespace dayjs {
+    export const locale: (preset: string | ILocale, object?: Partial<ILocale>, isLocal?: boolean) => string;
+  }
+}
+
+declare module "dayjs/locale/*" {
+  const locale: any;
+  export default locale;
 }
