@@ -97,12 +97,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2025-01-29.md",
+                "file": "2025-01-27.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-01-29"
+              "title": "2025-01-27"
             }
           }
         ],
@@ -249,26 +249,26 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "2189f3f0364f2ef3",
+  "active": "8c7d38a3baf82faf",
   "lastOpenFiles": [
+    "2024-09-04.md",
+    "2024-08-21.md",
+    "2024-08-05.md",
+    "2024-07-07.md",
+    "2024-08-07.md",
+    "2024-08-09.md",
+    "2024-08-10.md",
+    "2024-08-15.md",
+    "2025-01-27.md",
+    "2025-01-29.md",
     "using-mdx.mdx",
     "mathematics-examples.md",
     "markdown-style-guide.md",
     "frosti-mdx.mdx",
     "adding-comment-systems.md",
     "2025-02-08.md",
-    "2025-01-29.md",
-    "2025-01-27.md",
     "未命名.canvas",
-    "2024-08-09.md",
-    "2024-08-07.md",
-    "2024-08-05.md",
-    "2024-07-07.md",
-    "2024-08-10.md",
-    "2024-08-15.md",
-    "2024-08-21.md",
     "2024-08-24.md",
-    "2024-09-04.md",
     "Pasted image 20250129142745.png",
     "2024-09-03.md"
   ]
